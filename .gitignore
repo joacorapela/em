@@ -1,6 +1,9 @@
 *~
 *.swp
 old
+*.log
+*.pdf
+*.aux
 toRsync
 delfi/docs
 delfi/figures
