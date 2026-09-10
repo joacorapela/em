@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{endfloat}
+
+\title{Problema 6}
+\author{Joaquín Rapela}
+
+\begin{document}
+
+\maketitle
+
+\section*{Parte a}
+
+La expresión del campo eléctrico sobre el eje $x$ es:
+
+\begin{align}
+    E(x, 0, 0)&=\frac{q}{4\pi\epsilon_0}\left(\frac{x+d/2}{|x+d/2|^3}-\frac{x-d/2}{|x-d/2|^3}\right)\hat{i}
+\end{align}
+
+La figura~\ref{fig:6a1_3} grafica $E(x, 0, 0)$ en función de $x$.  El sentido
+del $E(x, 0, 0)$ varía a lo largo del eje $x$. La figura~\ref{fig:6a5} grafica
+$||E(x, 0, 0)||_2$ en función de $x$.
+
+
+\begin{figure}
+    \centering
+    \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/6a1_3.html}{\includegraphics[width=6in]{../figures/6a1_3.png}}
+
+    \caption{E(x, 0, 0) para $q=0.1\mu C$, y $d=8 m$. Haga click en la imagen
+    para ver su version interactiva. El código usado para construir esta figura
+    se encuentra
+    \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/6a1_3.py}{aquí}.}
+
+    \label{fig:6a1_3}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/6a5.html}{\includegraphics[width=6in]{../figures/6a5.png}}
+
+    \caption{$||E(x, 0, 0)||_2$ para $q=0.1\mu C$, y $d=8 m$. Haga click en la
+    imagen para ver su version interactiva. El código usado para construir esta
+    figura se encuentra
+    \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/6a5.py}{aquí}.}
+
+    \label{fig:6a5}
+\end{figure}
+
+\section*{Parte b}
+
+La expresión del campo eléctrico sobre el eje $y$ es:
+
+\begin{align}
+    E(0, y, 0)&=\frac{qd}{(4\pi\epsilon_0)((d/2)^2+y^2)^{3/2}}\hat{i}
+\end{align}
+
+La figura~\ref{fig:6b} grafica $E(0, y, 0)$ en función de $y$.  El sentido
+del $E(0, y, 0)$ no varía a lo largo del eje $y$.
+
+
+\begin{figure}
+    \centering
+    \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/6b.html}{\includegraphics[width=6in]{../figures/6b.png}}
+
+    \caption{E(0, y, 0) para $q=0.1\mu C$, y $d=8 m$. Haga click en la imagen
+    para ver su version interactiva. El código usado para construir esta figura
+    se encuentra
+    \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/6b.py}{aquí}.}
+    \label{fig:6b}
+\end{figure}
+
+\section*{Parte c}
+
+La expresión del campo eléctrico sobre el eje $y$ es:
+
+\begin{align*}
+    E(\mathbf{p})&=\frac{q}{4\pi\epsilon_0}
+    \left(
+    \frac{\mathbf{p}-\begin{bmatrix}
+                       -d/2\\
+                       0\\
+                       0
+                     \end{bmatrix}}
+         {\left\Vert\mathbf{p}-\begin{bmatrix}
+                                 -d/2\\
+                                 0\\
+                                 0
+                               \end{bmatrix}\right\Vert^3}-
+    \frac{\mathbf{p}-\begin{bmatrix}
+                       d/2\\
+                       0\\
+                       0
+                     \end{bmatrix}}
+         {\left\Vert\mathbf{p}-\begin{bmatrix}
+                                 d/2\\
+                                 0\\
+                                 0
+                               \end{bmatrix}\right\Vert^3}
+    \right)
+\end{align*}
+
+La figura~\ref{fig:6c} grafica $E(\mathbf{p})$ en el espacio.
+
+
+\begin{figure}
+    \centering
+    \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/6c.html}{\includegraphics[width=6in]{../figures/6c.png}}
+
+    \caption{$E(\mathbf{p})$ para $q=0.1\mu C$, y $d=8 m$. Haga click en la imagen
+    para ver su version interactiva. El código usado para construir esta figura
+    se encuentra
+    \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/6c.py}{aquí}.}
+    \label{fig:6c}
+\end{figure}
+
+\end{document}
