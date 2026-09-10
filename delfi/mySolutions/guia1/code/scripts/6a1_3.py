@@ -19,7 +19,7 @@ dx = 0.8
 epsilon_x = 0.95
 ylim = [-1.0, 1.0]
 factor_x = 3
-fig_filename_pattern = "../../figures/6a1_3b.{:s}"
+fig_filename_pattern = "../../figures/6a1_3.{:s}"
 
 # Quiver parameters
 quiver_scale = 0.0007
