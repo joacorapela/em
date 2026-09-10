@@ -6,4 +6,4 @@ old
 *.aux
 toRsync
 delfi/docs
-delfi/figures
+figures
