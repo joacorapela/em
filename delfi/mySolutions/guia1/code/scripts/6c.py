@@ -7,15 +7,16 @@ def E(p, q, d, epsilon0s=8.85*1e-6):
     # q should be given in micro Coulomb
     # answer return in Newton / Coulomb
     # answer \in N \times 3
+
     p_plus = np.array([-d/2, 0.0, 0.0])
     p_minus = np.array([d/2, 0.0, 0.0])
-    E_plus = (1 / (4 * np.pi * epsilon0s) * q * (p - p_plus) /
-              (np.linalg.norm(p - p_plus, axis=1)**3)[:, np.newaxis])
-    E_minus = (-1 / (4 * np.pi * epsilon0s) * q * (p - p_minus) /
-               (np.linalg.norm(p - p_minus, axis=1)**3)[:, np.newaxis])
-    E = E_plus + E_minus
 
-    return E
+    answer = (q / (4 * np.pi * epsilon0s) *
+              ((p - p_plus) /
+               (np.linalg.norm(p - p_plus, axis=1)**3)[:, np.newaxis] -
+               (p - p_minus) /
+               (np.linalg.norm(p - p_minus, axis=1)**3)[:, np.newaxis]))
+    return answer
 
 
 # define constants
