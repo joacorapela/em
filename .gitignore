@@ -8,6 +8,7 @@ old
 toRsync
 delfi/docs
 figures
+delfi/delfisSolutions
 delfi/mySolutions/guia1/reports/*
 !delfi/mySolutions/guia1/reports/Makefile
 !delfi/mySolutions/guia1/reports/*.tex
