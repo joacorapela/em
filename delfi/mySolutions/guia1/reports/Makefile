@@ -1,4 +1,4 @@
-all: 6.pdf
+all: guia1.pdf
 
 %.pdf: %.tex
 	pdflatex $<
