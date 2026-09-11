@@ -117,4 +117,59 @@ La figura~\ref{fig:6c} grafica $E(\mathbf{p})$ en el espacio.
     \label{fig:6c}
 \end{figure}
 
+\section*{Problema 7}
+\subsection*{Parte a}
+
+Le siguiente ecuación representa el campo eléctrico sobre en la posición
+$(x_0,y_0,y_0)$ generado por una distribución uniforme de cargas en el
+intervalo $(-L/2,L/2)$ del eje $x$, con densidad $\lambda$.
+
+\begin{align*}
+    E(x_0,y_0,z_0)&=\frac{\lambda}{4\pi\epsilon_0}\left(\frac{1}{\sqrt{(x_0-L/2)^2+y_0^2}}-\frac{1}{\sqrt{(x_0+L/2)^2+y_0^2}}\right.,\\
+                                                     &\quad\quad\quad\quad\quad\frac{y_0}{y_0^2+z_0^2}\left(\frac{L/2-x_0}{\sqrt{(L/2-x_0)^2+y_0^2+z_0^2}}+\frac{L/2+x_0}{\sqrt{(L/2+x_0)^2+y_0^2+z_0^2}}\right),\\
+                                                     &\quad\quad\quad\quad\quad\left.\frac{z_0}{y_0^2+z_0^2}\left(\frac{L/2-x_0}{\sqrt{(L/2-x_0)^2+y_0^2+z_0^2}}+\frac{L/2+x_0}{\sqrt{(L/2+x_0)^2+y_0^2+z_0^2}}\right)\right)
+\end{align*}
+
+\subsection*{Partes b, c}
+
+La figura~\ref{fig:7bc} grafica $||E(0,y_0,0)||_2$ en function de $y_0$,
+usando $\lambda=15\mu C/m$. Las barras azules corresponden a $L=0.5m$ y las
+barras rojas a $L=\infty$.
+
+\begin{figure}
+    \centering
+    \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/7bc.html}{\includegraphics[width=6in]{../figures/7bc.png}}
+
+    \caption{$||E(0,y_0,0)||_2$ en function de $y_0$, usando $\lambda=15\mu
+    C/m$ y $L=0.5m$ (barras azules) o $L=\infty$ (barras rojas). Haga click en
+    la imagen para ver su version interactiva. El código usado para construir
+    esta figura se encuentra
+    \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/7bcd.py}{aquí}.}
+
+    \label{fig:7bc}
+\end{figure}
+
+\subsection*{Parte d}
+
+La figura~\ref{fig:7d} grafica las diferencias percentuales entre el uso de
+$L=0.5m$ y $L=\infty$ (i.e.,
+$\frac{E_{L=0.5m}(0,y_0,0)-E_{L=\infty}(0,y_0,0)}{E_{L=\infty}(0,y_0,0)}$).
+
+No entiendo porque para $y_0<1$ el campo eléctrico es mayor para $L=0.5m$ que
+para $L=\infty$, y para $y_0>1$ sucede a la inversa.
+
+\begin{figure}
+    \centering
+    \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/7d.html}{\includegraphics[width=6in]{../figures/7d.png}}
+
+    \caption{Diferencias percentuales entre el uso de $L=0.5m$ y $L=\infty$
+    (i.e.,
+    $\frac{E_{L=0.5m}(0,y_0,0)-E_{L=\infty}(0,y_0,0)}{E_{L=\infty}(0,y_0,0)}$).
+    Haga click en la imagen para ver su version interactiva.  El código usado
+    para construir esta figura se encuentra
+    \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/7bcd.py}{aquí}.}
+
+    \label{fig:7d}
+\end{figure}
+
 \end{document}
