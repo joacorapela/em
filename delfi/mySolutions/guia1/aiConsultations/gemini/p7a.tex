@@ -1,0 +1,23 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{align}
+    \int_{-L/2}^{L/2}\frac{1}{\left(x^2+y^2+(z-z')^2\right)^{3/2}}dz'&=\int_{z+L/2}^{z-L/2}\frac{-1}{\left(x^2+y^2+u^2\right)^{3/2}}du\label{line1}\\
+                                                  &=\int_{z-L/2}^{z+L/2}\frac{1}{\left(x^2+y^2+u^2\right)^{3/2}}du\\
+                                                  &=\left.\frac{u}{(x^2+y^2)\sqrt{x^2+y^2+u^2}}\right|_{u=z-L/2}^{z+L/2}\\
+                                                  &=\frac{z+L/2}{(x^2+y^2)\sqrt{x^2+y^2+(z+L/2)^2}}-\nonumber\\
+                                                  &\quad\frac{z-L/2}{(x^2+y^2)\sqrt{x^2+y^2+(z-L/2)^2}}
+\end{align}
+
+En la ecuación~\ref{line1} usé el siguiente cambio de variables:
+
+\begin{align*}
+    u&=z-z'\rightarrow du=-dz'\\
+    z'&=-L/2\rightarrow u=z+L/2\\
+    z'&=L/2\rightarrow u=z-L/2
+\end{align*}
+
+\end{document}
