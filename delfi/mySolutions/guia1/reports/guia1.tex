@@ -5,7 +5,7 @@
 \usepackage[colorlinks]{hyperref}
 \usepackage{endfloat}
 
-\title{Guia 1}
+\title{Guía 1}
 \author{Joaquín Rapela}
 
 \begin{document}
@@ -30,8 +30,8 @@ $||E(x, 0, 0)||_2$ en función de $x$.
     \centering
     \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/6a1_3.html}{\includegraphics[width=6in]{../figures/6a1_3.png}}
 
-    \caption{E(x, 0, 0) para $q=0.1\mu C$, y $d=8 m$. Haga click en la imagen
-    para ver su version interactiva. El código usado para construir esta figura
+    \caption{E(x, 0, 0) para $q=0.1\mu C$, y $d=8 m$. Haga clic en la imagen
+    para ver su versión interactiva. El código usado para construir esta figura
     se encuentra
     \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/6a1_3.py}{aquí}.}
 
@@ -42,8 +42,8 @@ $||E(x, 0, 0)||_2$ en función de $x$.
     \centering
     \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/6a5.html}{\includegraphics[width=6in]{../figures/6a5.png}}
 
-    \caption{$||E(x, 0, 0)||_2$ para $q=0.1\mu C$, y $d=8 m$. Haga click en la
-    imagen para ver su version interactiva. El código usado para construir esta
+    \caption{$||E(x, 0, 0)||_2$ para $q=0.1\mu C$, y $d=8 m$. Haga clic en la
+    imagen para ver su versión interactiva. El código usado para construir esta
     figura se encuentra
     \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/6a5.py}{aquí}.}
 
@@ -66,8 +66,8 @@ del $E(0, y, 0)$ no varía a lo largo del eje $y$.
     \centering
     \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/6b.html}{\includegraphics[width=6in]{../figures/6b.png}}
 
-    \caption{E(0, y, 0) para $q=0.1\mu C$, y $d=8 m$. Haga click en la imagen
-    para ver su version interactiva. El código usado para construir esta figura
+    \caption{E(0, y, 0) para $q=0.1\mu C$, y $d=8 m$. Haga clic en la imagen
+    para ver su versión interactiva. El código usado para construir esta figura
     se encuentra
     \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/6b.py}{aquí}.}
     \label{fig:6b}
@@ -110,8 +110,8 @@ La figura~\ref{fig:6c} grafica $E(\mathbf{p})$ en el espacio.
     \centering
     \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/6c.html}{\includegraphics[width=6in]{../figures/6c.png}}
 
-    \caption{$E(\mathbf{p})$ para $q=0.1\mu C$, y $d=8 m$. Haga click en la imagen
-    para ver su version interactiva. El código usado para construir esta figura
+    \caption{$E(\mathbf{p})$ para $q=0.1\mu C$, y $d=8 m$. Haga clic en la imagen
+    para ver su versión interactiva. El código usado para construir esta figura
     se encuentra
     \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/6c.py}{aquí}.}
     \label{fig:6c}
@@ -125,14 +125,18 @@ $(x_0,y_0,y_0)$ generado por una distribución uniforme de cargas en el
 intervalo $(-L/2,L/2)$ del eje $x$, con densidad $\lambda$.
 
 \begin{align*}
-    E(x_0,y_0,z_0)&=\frac{\lambda}{4\pi\epsilon_0}\left(\frac{1}{\sqrt{(x_0-L/2)^2+y_0^2}}-\frac{1}{\sqrt{(x_0+L/2)^2+y_0^2}}\right.,\\
+    E(x_0,y_0,z_0|L)&=\frac{\lambda}{4\pi\epsilon_0}\left(\frac{1}{\sqrt{(x_0-L/2)^2+y_0^2}}-\frac{1}{\sqrt{(x_0+L/2)^2+y_0^2}}\right.,\\
                                                      &\quad\quad\quad\quad\quad\frac{y_0}{y_0^2+z_0^2}\left(\frac{L/2-x_0}{\sqrt{(L/2-x_0)^2+y_0^2+z_0^2}}+\frac{L/2+x_0}{\sqrt{(L/2+x_0)^2+y_0^2+z_0^2}}\right),\\
                                                      &\quad\quad\quad\quad\quad\left.\frac{z_0}{y_0^2+z_0^2}\left(\frac{L/2-x_0}{\sqrt{(L/2-x_0)^2+y_0^2+z_0^2}}+\frac{L/2+x_0}{\sqrt{(L/2+x_0)^2+y_0^2+z_0^2}}\right)\right)
 \end{align*}
 
 \subsection*{Partes b, c}
 
-La figura~\ref{fig:7bc} grafica $||E(0,y_0,0)||_2$ en function de $y_0$,
+\begin{align*}
+    \lim_{L\rightarrow\infty}E(x_0,y_0,z_0|L)&=\frac{\lambda}{4\pi\epsilon_0}\frac{2}{y_0^2+z_0^2}(0,y_0,z_0)
+\end{align*}
+
+La figura~\ref{fig:7bc} grafica $||E(0,y_0,0|L)||_2$ en función de $y_0$,
 usando $\lambda=15\mu C/m$. Las barras azules corresponden a $L=0.5m$ y las
 barras rojas a $L=\infty$.
 
@@ -140,36 +144,41 @@ barras rojas a $L=\infty$.
     \centering
     \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/7bc.html}{\includegraphics[width=6in]{../figures/7bc.png}}
 
-    \caption{$||E(0,y_0,0)||_2$ en function de $y_0$, usando $\lambda=15\mu
-    C/m$ y $L=0.5m$ (barras azules) o $L=\infty$ (barras rojas). Haga click en
-    la imagen para ver su version interactiva. El código usado para construir
+    \caption{$||E(0,y_0,0)||_2$ en función de $y_0$, usando $\lambda=15\mu
+    C/m$ y $L=0.5m$ (barras azules) o $L=\infty$ (barras rojas). Haga clic en
+    la imagen para ver su versión interactiva. El código usado para construir
     esta figura se encuentra
     \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/7bcd.py}{aquí}.}
 
     \label{fig:7bc}
 \end{figure}
 
+El campo eléctrico correspondiente a $L=\infty$ es siempre más fuerte que el
+correspondiente a $L=0.5m$.
+
 \subsection*{Parte d}
 
-La figura~\ref{fig:7d} grafica las diferencias percentuales entre el uso de
-$L=0.5m$ y $L=\infty$ (i.e.,
-$\frac{E_{L=0.5m}(0,y_0,0)-E_{L=\infty}(0,y_0,0)}{E_{L=\infty}(0,y_0,0)}$).
-
-No entiendo porque para $y_0<1$ el campo eléctrico es mayor para $L=0.5m$ que
-para $L=\infty$, y para $y_0>1$ sucede a la inversa.
+La figura~\ref{fig:7d} grafica las diferencias porcentuales entre $\Vert
+E(0,y_0,0|L=0.5m)\Vert_2$ y $\lim_{L\rightarrow\infty}\Vert
+E(0,y_0,0|L)\Vert_2$, en función de $y_0$.
 
 \begin{figure}
     \centering
     \href{https://www.gatsby.ucl.ac.uk/~rapela/em/delfi/mySolutions/guia1/figures/7d.html}{\includegraphics[width=6in]{../figures/7d.png}}
 
-    \caption{Diferencias percentuales entre el uso de $L=0.5m$ y $L=\infty$
+    \caption{Diferencias porcentuales entre el uso de $L=0.5m$ y $L=\infty$
     (i.e.,
     $\frac{E_{L=0.5m}(0,y_0,0)-E_{L=\infty}(0,y_0,0)}{E_{L=\infty}(0,y_0,0)}$).
-    Haga click en la imagen para ver su version interactiva.  El código usado
+    Haga clic en la imagen para ver su versión interactiva.  El código usado
     para construir esta figura se encuentra
     \href{https://github.com/joacorapela/em/blob/master/delfi/mySolutions/guia1/code/scripts/7bcd.py}{aquí}.}
 
     \label{fig:7d}
 \end{figure}
+
+La diferencia porcentual entre $\Vert E(0,y_0,0|L=0.5m)\Vert_2$ y
+$\lim_{L\rightarrow\infty}\Vert E(0,y_0,0|L)\Vert_2$ es mayor a medida que
+$y_0$ aumenta, ya que en estos casos la influencia de cargas
+correspondientes a $|x|>L/2$ es porcentualmente mayor.
 
 \end{document}
