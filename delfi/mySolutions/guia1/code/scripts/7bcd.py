@@ -4,15 +4,13 @@ import plotly.graph_objects as go
 
 def E(x0, y0, epsilon0s, L, aLambda):
     k = aLambda / (4 * math.pi * epsilon0s)
-    answer = (k * (1.0 / math.sqrt((x0 - L/2)**2 + y0**2) -
-                1.0 / math.sqrt((x0 + L/2)**2 + y0**2)),
-               k * ((L/2 - x0) / (y0 * math.sqrt((L/2 - x0)**2 + y0**2)) +
-                    (L/2 + x0) / (y0 * math.sqrt((L/2 + x0)**2 + y0**2))))
+    answer = (k * (1.0 / math.sqrt((x0 - L/2)**2 + y0**2) - 1.0 / math.sqrt((x0 + L/2)**2 + y0**2)),
+              k / y0 * ((L/2 - x0) / (math.sqrt((L/2 - x0)**2 + y0**2)) + (L/2 + x0) / (math.sqrt((L/2 + x0)**2 + y0**2))))
     return answer
 
 def E_L_inf(y0, epsilon0s, aLambda):
     k = aLambda / (4 * math.pi * epsilon0s)
-    answer = (0, k / (2 * y0))
+    answer = (0, k * 2 / y0)
     return answer
 
 # problem variables
@@ -51,7 +49,7 @@ trace = go.Bar(x=y0s, y=norm_E_L_infs, name=r"$\text{L}=\infty$")
 fig.add_trace(trace)
 fig.update_xaxes(title=r"$y_0$")
 fig.update_yaxes(
-    title_text=r"$\| \mathbf{E}(0,y_0,0) \|_2 \quad [\text{N}/\mu\text{C}]$"
+    title_text=r"$\| \mathbf{E}(0,y_0,0|L) \|_2 \quad [\text{N}/\mu\text{C}]$"
 )
 fig.write_html(fig_filename_pattern.format("html"), include_mathjax="cdn")
 fig.write_image(fig_filename_pattern.format("png"))
@@ -62,7 +60,7 @@ fig = go.Figure()
 trace = go.Bar(x=y0s, y=perc_diff)
 fig.add_trace(trace)
 fig.update_xaxes(title=r"$y_0$")
-fig.update_yaxes(title=r"$\frac{E_{L=0.5m}(0,y_0,0)-E_{L=\infty}(0,y_0,0)}{E_{L=\infty}(0,y_0,0)}$")
+fig.update_yaxes(title=r"$\frac{E(0,y_0,0|L=0.5m)-\lim{L\rightarrow\infty}(0,y_0,0|L)}{\lim_{L\rightarrow\infty}E(0,y_0,0|L)}$")
 fig.write_html(perc_fig_filename_pattern.format("html"), include_mathjax="cdn")
 fig.write_image(perc_fig_filename_pattern.format("png"))
 print("Saved {:s}".format(perc_fig_filename_pattern.format("html")))
