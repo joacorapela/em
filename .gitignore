@@ -3,13 +3,13 @@
 *.swp
 old
 *.log
-*.pdf
 *.aux
 toRsync
 delfi/docs
 figures
-delfi/delfisSolutions
+delfi/delfisSolutions/Guia_De_Fisica_2.pdf
 delfi/mySolutions/guia1/reports/*
 !delfi/mySolutions/guia1/reports/Makefile
 !delfi/mySolutions/guia1/reports/*.tex
 !delfi/mySolutions/guia1/reports/*.pdf
+delfi/mySolutions/guia1/aiConsultations/gemini/*.pdf
