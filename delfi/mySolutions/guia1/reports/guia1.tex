@@ -5,6 +5,8 @@
 \usepackage[colorlinks]{hyperref}
 \usepackage{endfloat}
 
+\DeclareMathOperator{\sign}{sign}
+
 \title{Guía 1}
 \author{Joaquín Rapela}
 
@@ -180,5 +182,43 @@ La diferencia porcentual entre $\Vert E(0,y_0,0|L=0.5m)\Vert_2$ y
 $\lim_{L\rightarrow\infty}\Vert E(0,y_0,0|L)\Vert_2$ es mayor a medida que
 $y_0$ aumenta, ya que en estos casos la influencia de cargas
 correspondientes a $|x|>L/2$ es porcentualmente mayor.
+
+\section*{Problema 9}
+\subsection*{Parte a}
+
+\begin{align*}
+    E(0,0,d)=\frac{d\sigma}{2\epsilon_0}\left(\frac{1}{\sqrt{R_i^2+d^2}}-\frac{1}{\sqrt{R_e^2+d^2}}\right)\hat{k}
+\end{align*}
+
+\subsection*{Parte b}
+
+\begin{align*}
+    \lim_{R_i\rightarrow 0}E(0,0,d)=\frac{d\sigma}{2\epsilon_0}\left(\frac{1}{|d|}-\frac{1}{\sqrt{R_e^2+d^2}}\right)\hat{k}
+\end{align*}
+
+\subsection*{Parte c}
+
+\begin{align*}
+    E(0,0,d=0.1m|R=0.05m,\sigma=0.5\mu C/m^2)=0.003\;\hat{k}\;N/\mu C
+\end{align*}
+
+\subsection*{Parte d}
+
+\begin{align*}
+    \lim_{R_i\rightarrow 0,R_e\rightarrow\infty}E(0,0,d)=\frac{\sigma}{2\epsilon_0}\sign(d)\;\hat{k}
+\end{align*}
+
+\subsection*{Parte e}
+
+Podemos expresar el resultado de la parte b como:
+
+\begin{align*}
+    \lim_{R_i\rightarrow
+    0}E(0,0,d)=\frac{\sigma}{2\epsilon_0}\left(\sign(d)-\frac{1}{\sqrt{(R_e/d)^2+1}}\right)\hat{k}
+\end{align*}
+
+\noindent Esta ecuación muestra que el campo eléctrico depende sólo del cociente
+entre $R_e$ y $d$, por lo que es equivalente llevar $R_e$ a infinito que llevar
+$d$ a zero.
 
 \end{document}
