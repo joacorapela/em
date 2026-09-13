@@ -1,0 +1,16 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+Are the following statements correct?
+
+\begin{align*}
+    E(0,0,z_0)&=\frac{1}{4\pi\epsilon_0}\int\int\frac{\mathbf{r}-\mathbf{r}'}{\Vert\mathbf{r}-\mathbf{r}'\Vert^3}da\\
+              &=-\frac{\sigma}{4\pi\epsilon_0}\int_0^{2\pi}\int_{Ri}^{Re}\frac{r\cos\theta}{(r^2+z_0^2)^{3/2}}drd\theta\;\hat{i}\\
+              &\quad-\frac{\sigma}{4\pi\epsilon_0}\int_0^{2\pi}\int_{Ri}^{Re}\frac{r\sin\theta}{(r^2+z_0^2)^{3/2}}drd\theta\;\hat{j}+\\
+              &\quad+\frac{\sigma}{4\pi\epsilon_0}z_0\int_0^{2\pi}\int_{Ri}^{Re}\frac{1}{(r^2+z_0^2)^{3/2}}drd\theta\;\hat{k}
+\end{align*}
+
+\end{document}
