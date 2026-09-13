@@ -16,4 +16,4 @@ R = 0.05
 sigmas = 0.5  # scale factor 1e6
 
 answer = E(z0=z0, sigmas=sigmas, epsilon0s=epsilon0s, R=R)
-print(f"answer=({answer[0]:.4f},{answer[1]:.4f},{answer[2]:.4f})")
+print(rf"answer=({answer[0]:.4f},{answer[1]:.4f},{answer[2]:.4f}) N/\mu C")
