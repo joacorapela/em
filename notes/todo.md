@@ -1,0 +1,4 @@
+- typeset summary in latex
+- study theory until, but not including, Section 2.5 Conductors
+- complete Delfi's problem set 1
+- perform an electrostatic experiment!
