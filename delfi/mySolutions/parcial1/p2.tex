@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter{\norm}{\Vert}{\Vert}
+\DeclareMathOperator{\sign}{sign}
+
+\author{Joaquín Rapela}
+
+\title{Parcial 1}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problema 2}
+
+Voy a calcular el campo eléctrico, $\mathbf{E}$, para cualquier punto
+$\mathbf{x}=(x,0,0)$ en el eje $x$ dado que la carga puntual está en la
+posición $x_Q$ del eje $x$.
+
+\begin{align*}
+    \mathbf{E}(\mathbf{x}|x_Q)=\mathbf{E}_H(\mathbf{x})+\mathbf{E}_Q(\mathbf{x}|x_Q)
+\end{align*}
+
+\noindent donde $\mathbf{E}_H$ y $\mathbf{E}_Q$ son los campos eléctricos
+generados por el hilo y la carga puntual, respectivamente.
+
+\begin{align}
+    \mathbf{E}_H(\mathbf{x})&=\frac{1}{4\pi\epsilon_0}\int_H\frac{\lambda}{\norm{\mathbf{x}-\mathbf{r}_H}^3}(\mathbf{x}-\mathbf{r}_H).ds\label{eq:E_H1}\\
+                            &=\frac{1}{4\pi\epsilon_0}\int_{-0.1}^{0.1}\left\langle\frac{\lambda}{\norm{\mathbf{x}-\phi(t)}^3}(\mathbf{x}-\phi(t)),\phi'(t)\right\rangle\;dt\label{eq:E_H2}\\
+                            &=\frac{1}{4\pi\epsilon_0}\int_{-0.1}^{0.1}\frac{\lambda}{(x^2+t^2)^{3/2}}(x,-t,0)\;dt\nonumber\\
+                            &=\frac{\lambda}{4\pi\epsilon_0}\left(\left.\frac{t}{x\sqrt{x^2+t^2}}\right|_{-0.1}^{0.1},\left.\frac{1}{\sqrt{x^2+t^2}}\right|_{-0.1}^{0.1},0\right)\nonumber\\
+                            &=\frac{\lambda}{4\pi\epsilon_0}\left(\frac{0.2}{x\sqrt{x^2+0.1^2}},0,0\right)\nonumber\\
+                            &=\frac{\lambda}{4\pi\epsilon_0}\frac{0.2}{x\sqrt{x^2+0.1^2}}\hat{\mathbf{x}}\nonumber\\
+    \mathbf{E}_Q(\mathbf{x}|x_Q)=&\frac{1}{4\pi\epsilon_0}\frac{Q}{(x-x_Q)^2}\sign(x-x_Q)\hat{\mathbf{x}}\label{eq:E_Q}
+\end{align}
+
+Notas:
+
+\begin{enumerate}
+
+    \item Eq.~\ref{eq:E_H1} es la definición de la ley de Coulomb para una
+        distribución de carga lineal.
+
+    \item Eq.~\ref{eq:E_H2} sigue de la definción de la integral de linea para
+        una parametrización $\phi$ del hilo $H$:
+
+        \begin{align*}
+            \phi&:[-0.1,0.1]\rightarrow H\\
+            \phi(t)&=(0,t,0)\\
+            \phi'(t)&=(0,1,0)
+        \end{align*}
+
+    \item Para la Eq.~\ref{eq:E_H2} usamos las siguientes primitivas de una
+        tabla de integrales:
+
+        \begin{align*}
+            \int\frac{x}{(x^2+t^2)^{3/2}}dt&=x\frac{1}{x^2}\frac{t}{\sqrt{x^2+t^2}}=\frac{1}{x}\frac{t}{\sqrt{x^2+t^2}}\\
+            \int\frac{t}{(x^2+t^2)^{3/2}}dt&=-\frac{t}{\sqrt{x^2+t^2}}
+        \end{align*}
+
+\end{enumerate}
+\subsection*{Parte a}
+
+\begin{align*}
+    \mathbf{E}((0.2,0,0)|x_Q=0.4)&=\mathbf{E}_H((0.2,0,0))+\mathbf{E}_Q((0.2,0,0)|x_Q=0.4)\\
+                         &=0.8042\;\hat{\mathbf{x}} - 1.7984\;\hat{\mathbf{x}}=
+                         -0.9941\;\hat{\mathbf{x}}\;\text{N}/\mu C
+\end{align*}
+
+\subsection*{Parte b}
+
+Tengo que encontrar un $x_Q$ tal que $\mathbf{E}((0.2,0,0)|x_Q)=0$ o
+$\mathbf{E}_Q((0.2,0,0)|x_Q)=-\mathbf{E}_H((0.2,0,0))=-0.8042\;\text{N}/\mu C$.
+Usando la Eq.~\ref{eq:E_Q} esto es
+
+\begin{align}
+    -\frac{1}{4\pi\epsilon_0}\frac{Q}{(0.2-x_Q)^2}=-0.8042\label{eq:findx_Q}
+\end{align}
+
+\noindent Resolviendo la Eq.~\ref{eq:findx_Q} obtengo
+
+\begin{align*}
+    x_Q=0.2+\sqrt{\frac{1}{4\pi\epsilon_0}\frac{Q}{0.8042}}=0.5\;\text{m}
+\end{align*}
+
+\subsection*{Parte c}
+
+Llamemos $\mathbf{D}=(d,0,0)$ al punto donde se encuentra la carga $Q$.
+%
+Sabemos que $W=q_2(V(\mathbf{C})-V(\mathbf{B}))$.
+%
+Por la definición de potencial:
+
+\begin{align*}
+    V(\mathbf{C})-V(\mathbf{B})&=-\int_\mathbf{B}^\mathbf{C}\mathbf{E}.ds=-\int_\mathbf{B}^\mathbf{C}(\mathbf{E}_H+\mathbf{E}_Q).ds=-\left(\int_\mathbf{B}^\mathbf{C}\mathbf{E}_H.ds+\int_\mathbf{B}^\mathbf{C}\mathbf{E}_Q.ds\right)\\
+                               &=\left(V_H(\mathbf{C})-V_H(\mathbf{B})\right)+\left(V_Q(\mathbf{C})-V_Q(\mathbf{B})\right)
+\end{align*}
+
+Por simetría, $V_H(\mathbf{C})=V_H(\mathbf{B})$. Por otro lado, sabemos que
+para una carga aislada se cumple que:
+
+\begin{align*}
+    V_Q(\mathbf{C})-V_Q(\mathbf{B})=\frac{1}{4\pi\epsilon_0}Q\left(\frac{1}{\norm{\mathbf{D}-\mathbf{C}}}-\frac{1}{\norm{\mathbf{D}-\mathbf{B}}}\right)
+\end{align*}
+
+\noindent entonces
+
+\begin{align*}
+    W&=q_2\left(V(\mathbf{C})-V(\mathbf{B})\right)&=q_2\left(V_Q(\mathbf{C})-V_Q(\mathbf{B})\right)=\frac{1}{4\pi\epsilon_0}q_2Q\left(\frac{1}{\norm{\mathbf{D}-\mathbf{C}}}-\frac{1}{\norm{\mathbf{D}-\mathbf{B}}}\right)\\
+     &=0.5755\;\text{N\,m}
+\end{align*}
+\end{document}
