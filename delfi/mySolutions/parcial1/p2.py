@@ -9,15 +9,14 @@ lambdas = 20.0  # 10^{-6}
 Qs = 8.0  # 10^{-6}
 epsilon0s = 8.85  # 10^{-12}
 x = 0.2  # meter
-D = 0.4
-B = 0.6
-C = -0.6
+d = 0.4
+b = 0.6
+c = -0.6
 q2s = -2.0
 
-E_H = (lambdas / (4*math.pi*epsilon0s) *
-       0.2 / (x * math.sqrt(x**2 + 0.1**2)))  # N / \mu C
+E_H = (lambdas / (4*math.pi*epsilon0s) * 10 / math.sqrt(5))
 E_Q = (1.0 / (4*math.pi*epsilon0s) *
-       Qs / (x - D)**2 * sign(x - D))  # N / \mu C
+       Qs / (x - d)**2 * sign(x - d))  # N / \mu C
 E = E_H + E_Q
 
 print("Parte a")
@@ -31,7 +30,7 @@ print("Parte b")
 print(f"x_Q={x_Q}")
 
 W = (1.0 / (4*math.pi*epsilon0s) * q2s * Qs * 
-     (1.0 / abs(D - C) - 1.0 / abs(D - B)))  # N * m
+     (1.0 / abs(d - c) - 1.0 / abs(d - b)))  # N * m
 print("Parte c")
 print(f"W={W}")
 
