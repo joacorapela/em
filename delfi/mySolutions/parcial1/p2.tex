@@ -16,25 +16,22 @@
 
 \section*{Problema 2}
 
-Voy a calcular el campo eléctrico, $\mathbf{E}$, para cualquier punto
-$\mathbf{x}=(x,0,0)$ en el eje $x$ dado que la carga puntual está en la
-posición $x_Q$ del eje $x$.
-
 \begin{align*}
-    \mathbf{E}(\mathbf{x}|x_Q)=\mathbf{E}_H(\mathbf{x})+\mathbf{E}_Q(\mathbf{x}|x_Q)
+    \mathbf{E}(\mathbf{A}|x_Q)=\mathbf{E}_H(\mathbf{A})+\mathbf{E}_Q(\mathbf{A}|x_Q)
 \end{align*}
 
 \noindent donde $\mathbf{E}_H$ y $\mathbf{E}_Q$ son los campos eléctricos
-generados por el hilo y la carga puntual, respectivamente.
+generados por el hilo y la carga puntual, respectivamente, y
+$\mathbf{A}=(0.2,0,0)$.
 
 \begin{align}
-    \mathbf{E}_H(\mathbf{x})&=\frac{1}{4\pi\epsilon_0}\int_H\frac{\lambda}{\norm{\mathbf{x}-\mathbf{r}_H}^3}(\mathbf{x}-\mathbf{r}_H).ds\label{eq:E_H1}\\
-                            &=\frac{1}{4\pi\epsilon_0}\int_{-0.1}^{0.1}\left\langle\frac{\lambda}{\norm{\mathbf{x}-\phi(t)}^3}(\mathbf{x}-\phi(t)),\phi'(t)\right\rangle\;dt\label{eq:E_H2}\\
-                            &=\frac{1}{4\pi\epsilon_0}\int_{-0.1}^{0.1}\frac{\lambda}{(x^2+t^2)^{3/2}}(x,-t,0)\;dt\nonumber\\
-                            &=\frac{\lambda}{4\pi\epsilon_0}\left(\left.\frac{t}{x\sqrt{x^2+t^2}}\right|_{-0.1}^{0.1},\left.\frac{1}{\sqrt{x^2+t^2}}\right|_{-0.1}^{0.1},0\right)\nonumber\\
-                            &=\frac{\lambda}{4\pi\epsilon_0}\left(\frac{0.2}{x\sqrt{x^2+0.1^2}},0,0\right)\nonumber\\
-                            &=\frac{\lambda}{4\pi\epsilon_0}\frac{0.2}{x\sqrt{x^2+0.1^2}}\hat{\mathbf{x}}\nonumber\\
-    \mathbf{E}_Q(\mathbf{x}|x_Q)=&\frac{1}{4\pi\epsilon_0}\frac{Q}{(x-x_Q)^2}\sign(x-x_Q)\hat{\mathbf{x}}\label{eq:E_Q}
+    \mathbf{E}_H(\mathbf{A})&=\frac{1}{4\pi\epsilon_0}\int_H\frac{\lambda}{\norm{\mathbf{A}-\mathbf{r}_H}^3}(\mathbf{A}-\mathbf{r}_H).ds\label{eq:E_H1}\\
+                            &=\frac{1}{4\pi\epsilon_0}\int_{-0.1}^{0.1}\frac{\lambda}{\norm{\mathbf{A}-\phi(t)}^3}(\mathbf{A}-\phi(t))\,\norm{\phi'(t)}\;dt\label{eq:E_H2}\\
+                            &=\frac{1}{4\pi\epsilon_0}\int_{-0.1}^{0.1}\frac{\lambda}{(0.2^2+t^2)^{3/2}}(0.2,-t,0)\;dt\label{eq:E_H3}\\
+                            &=\frac{\lambda}{4\pi\epsilon_0}\left(\left.\frac{t}{0.2\sqrt{0.2^2+t^2}}\right|_{-0.1}^{0.1},\left.\frac{1}{\sqrt{0.2^2+t^2}}\right|_{-0.1}^{0.1},0\right)\label{eq:E_H4}\\
+                            &=\frac{\lambda}{4\pi\epsilon_0}\left(\frac{0.2}{0.2\sqrt{0.2^2+0.1^2}},0,0\right)\nonumber\\
+                            &=\frac{\lambda}{4\pi\epsilon_0}\frac{10}{\sqrt{5}}\hat{\mathbf{x}}\nonumber=0.8042\,\hat{\mathbf{x}}\,N/\mu C\\
+    \mathbf{E}_Q(\mathbf{A}|x_Q)=&\frac{1}{4\pi\epsilon_0}\frac{Q}{(0.2-x_Q)^2}\sign(0.2-x_Q)\hat{\mathbf{x}}\label{eq:E_Q}
 \end{align}
 
 Notas:
@@ -53,7 +50,21 @@ Notas:
             \phi'(t)&=(0,1,0)
         \end{align*}
 
-    \item Para la Eq.~\ref{eq:E_H2} usamos las siguientes primitivas de una
+    \item En la Eq.~\ref{eq:E_H3} usamos:
+
+        \begin{align*}
+            \mathbf{A}-\phi(t)&=(0.2,0,0)-(0,t,0)=(0.2,-t,0)\\
+            \norm{\mathbf{A}-\phi(t)}^3&=(0.2^2+t^2)^{3/2}\\
+            \norm{\phi'(t)}&=1
+        \end{align*}
+
+        entonces:
+
+        \begin{align*}
+            \frac{1}{4\pi\epsilon_0}\int_{-0.1}^{0.1}\frac{\lambda}{\norm{\mathbf{A}-\phi(t)}^3}(\mathbf{A}-\phi(t))\,\norm{\phi'(t)}\;dt=\frac{1}{4\pi\epsilon_0}\int_{-0.1}^{0.1}\frac{\lambda}{(0.2^2+t^2)^{3/2}}(0.2,-t,0)\;dt
+        \end{align*}
+
+    \item En la Eq.~\ref{eq:E_H4} usamos las siguientes primitivas de una
         tabla de integrales:
 
         \begin{align*}
@@ -65,15 +76,15 @@ Notas:
 \subsection*{Parte a}
 
 \begin{align*}
-    \mathbf{E}((0.2,0,0)|x_Q=0.4)&=\mathbf{E}_H((0.2,0,0))+\mathbf{E}_Q((0.2,0,0)|x_Q=0.4)\\
+    \mathbf{E}(\mathbf{A}|x_Q=0.4)&=\mathbf{E}_H(\mathbf{A})+\mathbf{E}_Q(\mathbf{A}|x_Q=0.4)\\
                          &=0.8042\;\hat{\mathbf{x}} - 1.7984\;\hat{\mathbf{x}}=
                          -0.9941\;\hat{\mathbf{x}}\;\text{N}/\mu C
 \end{align*}
 
 \subsection*{Parte b}
 
-Tengo que encontrar un $x_Q$ tal que $\mathbf{E}((0.2,0,0)|x_Q)=0$ o
-$\mathbf{E}_Q((0.2,0,0)|x_Q)=-\mathbf{E}_H((0.2,0,0))=-0.8042\;\text{N}/\mu C$.
+Tengo que encontrar un $x_Q$ tal que $\mathbf{E}(\mathbf{A}|x_Q)=0$ o
+$\mathbf{E}_Q(\mathbf{A}|x_Q)=-\mathbf{E}_H(\mathbf{A})=-0.8042\;\hat{\mathbf{x}}\;\text{N}/\mu C$.
 Usando la Eq.~\ref{eq:E_Q} esto es
 
 \begin{align}
